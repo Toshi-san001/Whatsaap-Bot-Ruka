@@ -86,4 +86,4 @@ MODS=9170032xxxxx
 
  ## 📃 License
 
- Cyria-Botto is free and open-source software licensed under the [GNU Affero General Public License v3.0](https://github.com/LuckyYam/WhatsApp-bot/blob/master/LICENSE).
+ Ruka-Botto is free and open-source software licensed under the [GNU Affero General Public License v3.0](https://github.com/iamherok/WhatsApp-Botto-Ruka/blob/master/LICENSE).
