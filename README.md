@@ -6,14 +6,8 @@
      height="200" />
 
 <h2> Ruka-Botto </h2><be>
-
-<a href='https://github.com/iamherok/WhatsApp-Botto-Ruka/releases'>
   
-<img src='https://img.shields.io/github/v/release/iamherok/WhatsApp-Botto-Ruka?color=white&label=version&style=for-the-badge'>
-  
-</a>
-  
-<a href='https://github.com/LuckyYam/Whatsapp-bot/blob/master/LICENSE'>
+<a href='https://github.com/iamherok/WhatsApp-Botto-Ruka/blob/master/LICENSE'>
   
 <img src='https://img.shields.io/github/license/LuckyYam/WhatsApp-bot?color=white&style=for-the-badge'>
   
