@@ -7,23 +7,23 @@
    "success_url": "/",
   "env": {
     "PORT": {
-    "description": "Port of your bot"
+    "description": "Port of your bot",
      "required": true
     },
     "NAME": {
-    "description": "Name for your bot"
+    "description": "Name for your bot",
     "required": true
     },
     "PREFIX": {
-    "description": "Set the prefix"
+    "description": "Set the prefix",
     "required": true
     },
     "MODS": {
-    "description": "Set the mods of the bot. Please use @s.whatsapp.net at the end and use , if u r adding multiple numbers. Ex: 917277288xxx@s.whatsapp.net, 89xxxxxxxx@s.whatsapp.net"
+    "description": "Set the mods of the bot. Please use @s.whatsapp.net at the end and use , if u r adding multiple numbers. Ex: 917277288xxx@s.whatsapp.net, 89xxxxxxxx@s.whatsapp.net",
     "required": true
     },
     "MONGODB": {
-     "description": "A secret String for Mongodb Connection.(Required)"
+     "description": "A secret String for Mongodb Connection.(Required)",
      "required": true 
     }
   },
