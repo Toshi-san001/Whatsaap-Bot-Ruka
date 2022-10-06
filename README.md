@@ -47,15 +47,15 @@ src="https://img.shields.io/badge/-Node.js-3C873A?style=flat&logo=Node.js&logoCo
 
 ## 💡 Self Hosting 
 
-First install
+- First install
 ```bash
-• Nodejs
-• GitHub 
-• Ffmpeg
+> Nodejs
+> GitHub 
+> Ffmpeg
 ```
-Create a file .env where all the environment variables will be stored 
+- Create a file .env where all the environment variables will be stored 
 
-Config the bot according to yourself 
+- Config the bot according to yourself 
 
 ```js
 PREFIX=#
@@ -63,9 +63,10 @@ NAME=Ruka
 MONGO_URI=mongodb://user:password@localhost:27017/test
 MODS=9170032xxxxx
 ```
-Then open terminal 
+- Then open terminal 
 
 ```bash
+> git clone https://github.com/iamherok/WhatsApp-Botto-Ruka
 > cd WhatsApp-Botto-Ruka
 > npm install  
 > npm start
