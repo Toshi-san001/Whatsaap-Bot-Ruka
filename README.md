@@ -7,9 +7,9 @@
 
 <h2> Ruka-Botto </h2><be>
 
-<a href='https://github.com/LuckyYam/Whatsapp-bot/releases'>
+<a href='https://github.com/iamherok/WhatsApp-Botto-Ruka/releases'>
   
-<img src='https://img.shields.io/github/v/release/LuckyYam/WhatsApp-bot?color=white&label=version&style=for-the-badge'>
+<img src='https://img.shields.io/github/v/release/iamherok/WhatsApp-Botto-Ruka?color=white&label=version&style=for-the-badge'>
   
 </a>
   
@@ -28,9 +28,12 @@ src="https://img.shields.io/badge/-Node.js-3C873A?style=flat&logo=Node.js&logoCo
 
 </div>
 
+> A Lightweight & Efficient WhatsApp Bot Packed With Features
+
 ---
 
 <div align='center'>
+
   
 ## Heroku Deploy
   
@@ -42,8 +45,7 @@ src="https://img.shields.io/badge/-Node.js-3C873A?style=flat&logo=Node.js&logoCo
   
 </div>
 
----
-## ~> Self Hosting 
+## 💡 Self Hosting 
 
 First install
 ```bash
@@ -69,15 +71,18 @@ Then open terminal
 > npm start
 ```
 
-## ~> Preview
+## ✨ Highlights
+- 💖 Object Oriented 
+- 💙 Written in [NodeJs](https://nodejs.org/)
+- 💛 Event-Based 
+- 💚 Powered by [ExpressJs](https://expressjs.com/)
+- 💝 Built with [Baileys](https://github.com/adiwajshing/baileys) (The Best WhatsApp Library Out There) 
 
- - Fully Modular Design
- - Written in [Nodejs](https://nodejs.org)
- - Built with [Baileys](https://github.com/adiwajshing/baileys) (A Lightweight full-featured WhatsApp Library)
- - Powered by [ExpressJs](https://expressjs.com/)
- - Database handled via [MongoDB](https://www.mongodb.com/)
- - Self-Auth restoration
+## 💪 Contribution
 
- ## ~> License
++ Feel free to open issues regarding any problems or if you have any feature requests
++ Make sure to follow the ESLint Rules while editing the code and run `npm run prettier-format` before opening PRs
+
+ ## 📃 License
 
  Cyria-Botto is free and open-source software licensed under the [GNU Affero General Public License v3.0](https://github.com/LuckyYam/WhatsApp-bot/blob/master/LICENSE).
