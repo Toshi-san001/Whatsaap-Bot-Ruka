@@ -47,9 +47,6 @@ const {
     Sticker,
     StickerTypes
 } = require('wa-sticker-formatter')
-const {
-    help
-} = require('../utils/message')
 const error = 'https://www.linkpicture.com/q/IMG-20220118-WA0387.png'
 const {
     Database
