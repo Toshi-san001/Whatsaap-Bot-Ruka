@@ -36,6 +36,9 @@
     },
     {
       "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+    },
+    {
+      "url": "https://github.com/ItsJimi/heroku-buildpack-pm2"
     }
   ],
    "formation": {
