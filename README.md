@@ -9,7 +9,7 @@
   
 <a href='https://github.com/iamherok/WhatsApp-Botto-Ruka/blob/master/LICENSE'>
   
-<img src='https://img.shields.io/github/license/LuckyYam/WhatsApp-bot?color=white&style=for-the-badge'>
+<img src='https://img.shields.io/github/license/iamherok/WhatsApp-Botto-Ruka?color=white&style=for-the-badge'>
   
 </a>
 
@@ -31,11 +31,8 @@ src="https://img.shields.io/badge/-Node.js-3C873A?style=flat&logo=Node.js&logoCo
   
 ## Heroku Deploy
   
-<a href='https://heroku.com/deploy'>
-  
-<img src='https://www.herokucdn.com/deploy/button.png'>
-  
-</a>
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/iamherok/WhatsApp-Botto-Ruka)
+
   
 </div>
 
