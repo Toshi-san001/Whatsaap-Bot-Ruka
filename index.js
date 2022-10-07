@@ -63,7 +63,7 @@ const connect = async () => {
         version,
     })
     store.bind(sock.ev)
-
+    
     sock.ev.on('chats.set', () => {
         console.log('got chats', store.chats.all()
             .length)
@@ -89,7 +89,7 @@ const connect = async () => {
         }
         if (connection === 'open') {
             await db.connect();
-  
+            
             sock.ev.on('group-participants.update', async (client) => {
                 try {
                     const Ievent = await db.get("event") || []
