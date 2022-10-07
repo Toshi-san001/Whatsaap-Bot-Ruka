@@ -70,6 +70,9 @@ MODS=9170032xxxxx
 - 💚 Powered by [ExpressJs](https://expressjs.com/)
 - 💝 Built with [Baileys](https://github.com/adiwajshing/baileys) (The Best WhatsApp Library Out There) 
 
+### WhatsApp Number
+ [![WhatsApp Number](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://api.whatsapp.com/send/?phone=917003213983&text&type=phone_number&app_absent=0)
+
 ## 💪 Contribution
 
 + Feel free to open issues regarding any problems or if you have any feature requests
