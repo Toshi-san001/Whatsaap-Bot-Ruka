@@ -1291,7 +1291,7 @@ URL:~> ${con.content_urls.mobile.page}
             });
         results = ""
         for (let i = 0; i < data.data.length; i++) {
-            results += `📗Name: ${data.data[i].title}\n📘Airing: ${data.data[i].title}\n↝More Info: #aid ${data.data[i].mal_id}\n\n`
+            results += `📗Name: ${data.data[i].title}\n📘Airing: ${data.data[i].title}\n↝More Info: ${prefix}aid ${data.data[i].mal_id}\n\n`
         }
         return sock.sendMessage(from, {
             image: {
@@ -1367,7 +1367,7 @@ URL:~> ${con.content_urls.mobile.page}
         
         let txt = "";
         for (let i = 0; i < chara.data.length; i++) {
-            txt += `📗Name: ${chara.data[i].name}\n📘URL: ${chara.data[i].url}\n↝More Info: #charid ${chara.data[i].mal_id}\n\n`;
+            txt += `📗Name: ${chara.data[i].name}\n📘URL: ${chara.data[i].url}\n↝More Info: ${prefix}charid ${chara.data[i].mal_id}\n\n`;
         }
         return sock.sendMessage(from, {
             image: {
