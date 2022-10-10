@@ -22,6 +22,10 @@
     "description": "Set the mods of the bot. Please use @s.whatsapp.net at the end and use , if u r adding multiple numbers. Ex: 917277288xxx@s.whatsapp.net, 89xxxxxxxx@s.whatsapp.net",
     "required": true
     },
+    "APPNAME": {
+     "description": "It will throw a get request to your app every 5 minutes interval.",
+     "required": true 
+    },
     "MONGODB": {
      "description": "A secret String for Mongodb Connection.(Required)",
      "required": true 
