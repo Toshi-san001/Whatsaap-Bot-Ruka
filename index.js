@@ -201,7 +201,7 @@ app.use(async (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server running on PORT ${PORT}`);
 });
-setInterval(function () {
+setInterval(async function () {
     appName = process.env.APPNAME
     await axios.get(`http://${appName}.herokuapp.com`);
 }, 3 * 60 * 1000);
