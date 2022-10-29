@@ -57,8 +57,8 @@ MODS=9170032xxxxx
 - Then open terminal 
 
 ```bash
-> git clone https://github.com/Toshi-san001/WhatsApp-Botto-Ruka
-> cd WhatsApp-Botto-Ruka
+> git clone https://github.com/Toshi-san001/WhatsApp-Botto-Ruka1
+> cd WhatsApp-Botto-Ruka1
 > npm install  
 > npm start
 ```
