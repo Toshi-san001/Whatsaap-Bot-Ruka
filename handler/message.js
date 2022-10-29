@@ -10,7 +10,6 @@ const gis = require("g-i-s");
 const {
     PassThrough
 } = require('stream')
-const yts = require("yt-search")
 const {
     exec
 } = require("child_process")
@@ -35,12 +34,11 @@ const ms = require("parse-ms");
 const wiki = require('wikipedia');
 const heartbeats = require('heartbeats');
 const sortArray = require('sort-array')
-const ytdl = require('ytdl-core')
 const TD = require('better-tord');
-const name = process.env.NAME || "Ruka"
+const name = process.env.NAME || "Aika"
 let mods = process.env.MODS;
 if (!mods) {
-    mods = "917003213983@s.whatsapp.net";
+    mods = "919609900020@s.whatsapp.net";
 }
 const ownerNumber = mods.split(",");
 const {
@@ -753,91 +751,7 @@ module.exports = async (sock, msg) => {
             reply("❌ Tag a sticker!");
             return;
         }
-    }
-    break
-    case 'ytsearch':
-    case 'yts': {
-        if (!text) {
-            reply('Provide a search term!')
-            return;
-        }
-        const term = text;
-        const {
-            videos
-        } = await yts(term);
-        if (!videos || videos.length <= 0) {
-            reply(`No Matching videos found for : *${term}*!!`)
-            return;
-        }
-        const length = videos.length < 10 ? videos.length : 10;
-        let tex = `☆☆💥 YOUTUBE SEARCH💥☆☆\n🔍 Term ~> ${term}\n\n`;
-        for (let i = 0; i < length; i++) {
-            tex += `🌐 Link ~> ${videos[i].url}\n👤 Channel ~> ${videos[i].author.name}\n🖥 Title ~> ${videos[i].title}\n\n`;
-        }
-        reply(tex)
-        return;
-    }
-    break
-    case 'play': {
-        if (!text) {
-            reply('Provide a search term!')
-            return;
-        }
-        try {
-            const {
-                videos
-            } = await yts(text);
-            if (!videos || videos.length <= 0) {
-                reply(`No Matching videos found for : *${args[0]}*!!`)
-                return;
-            }
-            let urlYt = videos[0].url
-            let infoYt = await ytdl.getInfo(urlYt);
-            //30 MIN
-            if (infoYt.videoDetails.lengthSeconds >= 1800) {
-                reply(`❌ Audio too big!`);
-                return;
-            }
-            const getRandom = (ext) => {
-                return `${Math.floor(Math.random() * 10000)}${ext}`;
-            };
-            let titleYt = infoYt.videoDetails.title;
-            let randomName = getRandom(".mp3");
-            const stream = ytdl(urlYt, {
-                    filter: (info) => info.audioBitrate == 160 || info.audioBitrate == 128,
-                })
-                .pipe(fs.createWriteStream(`./${randomName}`));
-            console.log("Audio downloading ->", urlYt);
-            // reply("Downloading.. This may take upto 5 min!");
-            await new Promise((resolve, reject) => {
-                stream.on("error", reject);
-                stream.on("finish", resolve);
-            });
-            
-            let stats = fs.statSync(`./${randomName}`);
-            let fileSizeInBytes = stats.size;
-            // Convert the file size to megabytes (optional)
-            let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
-            console.log("Audio downloaded ! Size: " + fileSizeInMegabytes);
-            if (fileSizeInMegabytes <= 40) {
-                //sendFile(from, fs.readFileSync(`./${randomName}`), msg, { audio: true, jpegThumbnail: (await getBuffer(dl.meta.image)).buffer, unlink: true })
-                await sock.sendMessage(
-                    from, {
-                        document: fs.readFileSync(`./${randomName}`),
-                        mimetype: "audio/mpeg",
-                        fileName: titleYt + ".mp3",
-                    }, {
-                        quoted: msg
-                    }
-                );
-            } else {
-                reply(`❌ File size bigger than 40mb.`);
-            }
-            fs.unlinkSync(`./${randomName}`);
-        } catch (e) {
-            reply(e.toString())
-        }
-    }
+    }  
     break
     case "ship": {
         arr = []
@@ -873,127 +787,6 @@ module.exports = async (sock, msg) => {
             quoted: msg
         })
         
-    }
-    break
-    
-    case 'ytmp4':
-    case 'ytvideo':
-    case 'ytv':
-        const getRandom = (ext) => {
-            return `${Math.floor(Math.random() * 10000)}${ext}`;
-        };
-        if (args.length === 0) {
-            reply(`❌ URL is empty! \nSend ${prefix}ytv url`);
-            return;
-        }
-        try {
-            let urlYt = args[0];
-            if (!urlYt.startsWith("http")) {
-                reply(`❌ Give youtube link!`);
-                return;
-            }
-            let infoYt = await ytdl.getInfo(urlYt);
-            //30 MIN
-            if (infoYt.videoDetails.lengthSeconds >= 1800) {
-                reply(`❌ Video file too big!`);
-                return;
-            }
-            let titleYt = infoYt.videoDetails.title;
-            let randomName = getRandom(".mp4");
-            
-            const stream = ytdl(urlYt, {
-                    filter: (info) => info.itag == 22 || info.itag == 18,
-                })
-                .pipe(fs.createWriteStream(`./${randomName}`));
-            //22 - 1080p/720p and 18 - 360p
-            console.log("Video downloading ->", urlYt);
-            // reply("Downloading.. This may take upto 5 min!");
-            await new Promise((resolve, reject) => {
-                stream.on("error", reject);
-                stream.on("finish", resolve);
-            });
-            
-            let stats = fs.statSync(`./${randomName}`);
-            let fileSizeInBytes = stats.size;
-            // Convert the file size to megabytes (optional)
-            let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
-            console.log("Video downloaded ! Size: " + fileSizeInMegabytes);
-            if (fileSizeInMegabytes <= 100) {
-                sock.sendMessage(
-                    from, {
-                        video: fs.readFileSync(`./${randomName}`),
-                        caption: `${titleYt}`,
-                    }, {
-                        quoted: msg
-                    }
-                );
-            } else {
-                reply(`❌ File size bigger than 40mb.`);
-            }
-            
-            fs.unlinkSync(`./${randomName}`);
-        } catch (e) {
-            reply(e.toString())
-        }
-        break
-    case 'ytmp3':
-    case 'ytaudio':
-    case 'yta': {
-        const getRandom = (ext) => {
-            return `${Math.floor(Math.random() * 10000)}${ext}`;
-        };
-        if (args.length === 0) {
-            reply(`❌ URL is empty! \nSend ${prefix}yta url`);
-            return;
-        }
-        try {
-            let urlYt = args[0];
-            if (!urlYt.startsWith("http")) {
-                reply(`❌ Give youtube link!`);
-                return;
-            }
-            let infoYt = await ytdl.getInfo(urlYt);
-            //30 MIN
-            if (infoYt.videoDetails.lengthSeconds >= 1800) {
-                reply(`❌ Video too big!`);
-                return;
-            }
-            let titleYt = infoYt.videoDetails.title;
-            let randomName = getRandom(".mp3");
-            const stream = ytdl(urlYt, {
-                    filter: (info) => info.audioBitrate == 160 || info.audioBitrate == 128,
-                })
-                .pipe(fs.createWriteStream(`./${randomName}`));
-            console.log("Audio downloading ->", urlYt);
-            // reply("Downloading.. This may take upto 5 min!");
-            await new Promise((resolve, reject) => {
-                stream.on("error", reject);
-                stream.on("finish", resolve);
-            });
-            
-            let stats = fs.statSync(`./${randomName}`);
-            let fileSizeInBytes = stats.size;
-            // Convert the file size to megabytes (optional)
-            let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
-            console.log("Audio downloaded ! Size: " + fileSizeInMegabytes);
-            if (fileSizeInMegabytes <= 40) {
-                //sendFile(from, fs.readFileSync(`./${randomName}`), msg, { audio: true, jpegThumbnail: (await getBuffer(dl.meta.image)).buffer, unlink: true })
-                await sock.sendMessage(
-                    from, {
-                        document: fs.readFileSync(`./${randomName}`),
-                        mimetype: "audio/mpeg",
-                        fileName: titleYt + ".mp3",
-                    }, {
-                        quoted: msg
-                    }
-                );
-            } else {
-                reply(`❌ File size bigger than 40mb.`);
-            }
-            fs.unlinkSync(`./${randomName}`);
-        } catch (e) {
-            reply(e.toString())
-        }
     }
     break
     case "remove": {
