@@ -31,7 +31,7 @@ src="https://img.shields.io/badge/-Node.js-3C873A?style=flat&logo=Node.js&logoCo
   
 ## Heroku Deploy
   
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/iamherok/WhatsApp-Botto-Ruka)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Toshi-san001/Whatsaap-Botto-Ruka1)
 
 Please use normal WhatsApp don't use any modified WhatsApp or business WhatsApp 
 </div>
